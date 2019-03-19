@@ -224,7 +224,7 @@ __|_______________________________________|___|";
  /        '-___-'                            / 
 /_________________________________________-- ";
             Console.Clear();
-            App.statmenu();
+            statmenu();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("::CAUTION::");
             Console.WriteLine("WARP DRIVE ACTIVATING");

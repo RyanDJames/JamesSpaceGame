@@ -26,7 +26,7 @@ namespace MySpaceGame
         public void BuyTransaction(int index, Spaceship Myship)
         {
             
-            index = int.Parse(Console.ReadLine());
+            
             Myship.inventory.Add(this.inventory.ElementAt(index));
             Myship.currency -= inventory[index].value;
             
