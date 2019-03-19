@@ -60,8 +60,6 @@ namespace MySpaceGame
             App App = new App();
             //introductory dialogue. 
             //initial user input.
-
-
             Logos.logo();
             Console.WriteLine($"Ah! \nSo {shipname} is what you've decided on... Erm, great name *coughs*");
             Console.ReadKey();
@@ -77,6 +75,7 @@ namespace MySpaceGame
             bool play = true;
             while (play)
             {
+                //choose what you want do 
                 statmenu();
                 Console.Write("What would you like to do?" +
                "\n1.  Would you like to travel?" +
@@ -92,11 +91,13 @@ namespace MySpaceGame
                     while (trade)
                     {
 
-
+                        Console.Clear();
+                        App.statmenu();
                         Console.WriteLine("Welcome to the market!");
-                        Console.WriteLine("would you like to buy, sell, or quit?: ");
-                        string answer = Console.ReadLine();
-                        if (answer == "buy")
+                        Logos.earthmarket();
+                        Console.WriteLine("\nwould you like to buy, sell, or quit?: ");
+                        string answer = Console.ReadLine().ToUpper();
+                        if (answer == "BUY")
                         {
                             Thread.Sleep(1000);
                             Earth.printInv();
@@ -106,18 +107,19 @@ namespace MySpaceGame
 
 
                         }
-                        else if (answer == "sell")
+                        else if (answer == "SELL")
                         {
 
                         }
-                        else if (answer == "quit")
+                        else if (answer == "QUIT")
                         {
                             trade = false;
                         }
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Sorry, I didn't understand. Try lower case? muhahahahahahahaha");
+                            Console.WriteLine("Sorry, I didn't understand. Try this resource:");
+                            Console.WriteLine("www.learntospell.com");
                             Console.ResetColor();
                         }
                         Console.Clear();
@@ -187,32 +189,33 @@ namespace MySpaceGame
                 while (name1 == 0);
                 name1 = 0;
 
-            }
-            //stats menu
-             void statmenu()
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"=======================================================================================================================");
-                Console.WriteLine($"    Name: {heroname}                Ship: {shipname}                 Planet:                Age:             credits:");
-                Console.WriteLine($"=======================================================================================================================");
-                Console.ResetColor();
-            }
-
-            //introduction story line
-            void introductionscreen()
-            {
-                Console.Clear();
-                Logos.logo();
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine($"THE YEAR IS 1998 A.D, PLANET EARTH IS IN GREAT DANGER.\n");
-                Console.WriteLine($"AFTER FUNDING MANY GREAT WARS AGAINST JUPITER, EARTH IS COMPLETELY BROKE. THE SPACE BANKERS ARE THREATENING\n");
-                Console.WriteLine($"TO DESTROY EARTH IF THE LOAN OF 10,000 CREDITS IS NOT REPAID BY 2038 A.D. {heroname} YOUR MISSION IS TO TRAVEL THE\n");
-                Console.WriteLine($"GALAXY AND MAKE ENOUGH MONEY TO REPAY THE SPACE BANK.  YOU  MUST BE QUICK... EVERY LIGHT YEAR TRAVELLED MEANS\n");
-                Console.WriteLine($"ANOTHER YEAR PASSES.  YOU MUST TAKE 1,000 CREDITS AND GO TO DIFFERENT PLANETS BUYING AND SELLING GOODS UNTIL YOU HAVE \n");
-                Console.WriteLine($"ENOUGH TO PAY THE BANKERS. TAKE YOUR SPACE SHIP {shipname} AND BEGIN YOUR JOURNEY!\n");
-                Console.ReadKey();
-            }
+            }         
         }
+        //stats menu
+        public static void statmenu()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($"=======================================================================================================================");
+            Console.WriteLine($"    Name: {heroname}                Ship: {shipname}                 Planet:                Age:             credits:");
+            Console.WriteLine($"=======================================================================================================================");
+            Console.ResetColor();
+        }
+        //introduction story line
+       public static  void introductionscreen()
+        {
+            Console.Clear();
+            Logos.logo();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"THE YEAR IS 1998 A.D, PLANET EARTH IS IN GREAT DANGER.\n");
+            Console.WriteLine($"AFTER FUNDING MANY GREAT WARS AGAINST JUPITER, EARTH IS COMPLETELY BROKE. THE SPACE BANKERS ARE THREATENING\n");
+            Console.WriteLine($"TO DESTROY EARTH IF THE LOAN OF 10,000 CREDITS IS NOT REPAID BY 2038 A.D. {heroname} YOUR MISSION IS TO TRAVEL THE\n");
+            Console.WriteLine($"GALAXY AND MAKE ENOUGH MONEY TO REPAY THE SPACE BANK.  YOU  MUST BE QUICK... EVERY LIGHT YEAR TRAVELLED MEANS\n");
+            Console.WriteLine($"ANOTHER YEAR PASSES.  YOU MUST TAKE 1,000 CREDITS AND GO TO DIFFERENT PLANETS BUYING AND SELLING GOODS UNTIL YOU HAVE \n");
+            Console.WriteLine($"ENOUGH TO PAY THE BANKERS. TAKE YOUR SPACE SHIP {shipname} AND BEGIN YOUR JOURNEY!\n");
+            Console.ReadKey();
+        }
+
+
     }
 }
