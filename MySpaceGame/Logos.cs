@@ -176,8 +176,8 @@ __|_______________________________________|___|";
             Console.ResetColor();
         }
 
-        //travelling through space logo
-        public static void travelinglogo()
+        //travelling through space logo1
+        public static void travelinglogo1()
         {
           
             Console.ForegroundColor = ConsoleColor.Red;
@@ -208,7 +208,12 @@ __|_______________________________________|___|";
   (     _,'``------''  
    `--''";
             Console.WriteLine(travelascii);
-            Console.ReadKey();
+            
+        }
+
+        //travelling through space logo2
+        public static void travelinglogo2()
+        {
 
             string wormhole = @"
      ________________________________         
@@ -223,14 +228,11 @@ __|_______________________________________|___|";
   /      :'     ':                            /
  /        '-___-'                            / 
 /_________________________________________-- ";
-            Console.Clear();
-            App.statmenu();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("::CAUTION::");
             Console.WriteLine("WARP DRIVE ACTIVATING");
             Console.WriteLine("::CAUTION::");
             Console.WriteLine(wormhole);
-            Console.ReadKey();
             Console.ResetColor();
         }
     }

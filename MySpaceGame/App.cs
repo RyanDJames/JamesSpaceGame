@@ -10,6 +10,9 @@ namespace MySpaceGame
 {
     class App
     {
+        static string currentplanet;
+        static string playercredits;
+        static string playerage;
         static string heroname;
         static string shipname;
         public void Run()
@@ -135,22 +138,30 @@ namespace MySpaceGame
                     Console.Clear();
                     statmenu();
                     Console.WriteLine("Where would you like to go?" +
-                    "\n 1. Earth\n 2. Alpha Centuri\n 3. Krypton ");
-                    string choice = Console.ReadLine();
-                    if (choice == "Earth")
+                    "\n Earth\n Alpha Centuri\n Krypton ");
+                    string choice = Console.ReadLine().ToUpper();
+                    if (choice == "EARTH")
                     {
-                        travel.ChoosePlanet(choice);
-                        CurrentPlanet = Earth;
-                    }
-                    else if (choice == "Krypton")
-                    {
-                        travel.ChoosePlanet(choice);
-                        CurrentPlanet = Krypton;
-                    }
-                    else if (choice == "Alpha Centauri")
 
                         travel.ChoosePlanet(choice);
-                    CurrentPlanet = AlphaCenturi;
+                        Logos.earthlogo();
+                        Console.ReadKey();
+                        CurrentPlanet = Earth;
+                    }
+                    else if (choice == "KRYPTON")
+                    {
+                        travel.ChoosePlanet(choice);
+                        Logos.planetkryptonlgo();
+                        Console.ReadKey();
+                        CurrentPlanet = Krypton;
+                    }
+                    else if (choice == "ALPHA CENTURI")
+                    {
+                        travel.ChoosePlanet(choice);
+                        Logos.aplhacentaurilogo();
+                        Console.ReadKey();
+                        CurrentPlanet = AlphaCenturi;
+                    }
                 }
 
                 else if (input == "0")
@@ -197,7 +208,7 @@ namespace MySpaceGame
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine($"=======================================================================================================================");
-            Console.WriteLine($"    Name: {heroname}                Ship: {shipname}                 Planet:                Age:             credits:");
+            Console.WriteLine($"    Name: {heroname}                Ship: {shipname}              Planet:{currentplanet}             Age:{playerage}          credits:{playercredits}");
             Console.WriteLine($"=======================================================================================================================");
             Console.ResetColor();
         }

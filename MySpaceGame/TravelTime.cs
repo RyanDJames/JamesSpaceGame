@@ -9,6 +9,8 @@ namespace MySpaceGame
 {
     public class TravelTime
     {
+        private object choice;
+
         //in this class, you're going to make some aesthe
         public void travelAnimatics()
         {
@@ -22,8 +24,13 @@ namespace MySpaceGame
             Console.WriteLine("1");
             Thread.Sleep(500);
             Console.WriteLine("BLASTOFF!");
-            Console.ReadLine();
             Console.ResetColor();
+            Thread.Sleep(600);
+            Console.Clear();
+            Logos.travelinglogo1();
+            Console.WriteLine("Press ENTER to continue:");
+            Console.Read();
+            
         }
         public void ChoosePlanet(string choice)
         {
@@ -31,7 +38,9 @@ namespace MySpaceGame
 
             Console.WriteLine($"Ok! {choice} it is!");
             travelAnimatics();
-            Console.WriteLine($"Welcome to {choice}!");
+            Console.Clear();
+            App.statmenu();
+            Console.WriteLine($"--------------------Welcome to {choice}--------------------");
             //planets.currentplanets = choice
 
         }
