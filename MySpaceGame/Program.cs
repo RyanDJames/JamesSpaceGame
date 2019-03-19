@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace MySpaceGame
 {
-    class Program
+    
+    public class Program
     {
-        static void Main(string[] args)
+        
+        public static void Main(string[] args)
         {
+            new App().Run();
+
         }
+    
     }
 }
