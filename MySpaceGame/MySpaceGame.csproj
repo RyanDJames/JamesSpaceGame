@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Items.cs" />
+    <Compile Include="Logos.cs" />
     <Compile Include="Planets.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

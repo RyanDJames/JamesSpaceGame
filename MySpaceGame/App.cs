@@ -10,11 +10,20 @@ namespace MySpaceGame
 {
     class App
     {
+        static string heroname;
+        static string shipname;
         public void Run()
         {
-            Console.WriteLine("Hello,  Adventurer, welcome to the Space Game!\nfirst we're going to name your ship." +
-                   "\npick a name for your ship please: ");
-            string shipname = Console.ReadLine();
+            Logos.logo();
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadKey();
+            Console.Clear();
+            Logos.logo();
+            Console.Write("Hello,  Adventurer, welcome to the Space Game!\nfirst we're going to name your ship." +
+              "\npick a name for your ship please: ");
+            Logos.spaceshiplogo();
+            Console.Write("Name: ");
+            shipname = Console.ReadLine().ToUpper();
             Console.Clear();
 
             //Create Spaceship:
@@ -53,12 +62,14 @@ namespace MySpaceGame
             //initial user input.
 
 
-
+            Logos.logo();
             Console.WriteLine($"Ah! \nSo {shipname} is what you've decided on... Erm, great name *coughs*");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Now, I'm not going to hold your hand. This universe is yours to conquer!");
+            Console.ReadKey();
+            App.chooseyourcharacter();
+            App.introductionscreen();
+            Console.WriteLine($"Now {heroname} I'm not going to hold your hand. This universe is yours to conquer!");
             Thread.Sleep(1000);
+            Console.ReadKey();
             Console.Clear();
 
             
@@ -66,40 +77,100 @@ namespace MySpaceGame
             bool play = true;
             while (play)
             {
-                Console.WriteLine("What would you like to do?" +
-               "\nWould you like to travel?" +
-               "\nWould you like to trade?" +
-               "\nWould you like to quit?" +
+                App.statmenu();
+                Console.Write("What would you like to do?" +
+               "\n1.  Would you like to travel?" +
+               "\n2.  Would you like to trade?" +
+               "\n0.  Would you like to quit?" +
                "\n-> : ");
                 
                 string input = Console.ReadLine();
-                if (input == "trade")
+                if (input == "2")
                 {
-                    
+                    Console.Clear();
+                    App.statmenu();
+                    Console.ReadKey();
 
                    
                 }
-                else if (input == "travel")
+                else if (input == "1")
                 {
                     Console.Clear();
+                    App.statmenu();
                     Console.WriteLine("Where would you like to go?" +
-                    "\n Earth, Alpha Centuri, or Krypton?: ");
+                    "\n 1. Earth\n 2. Alpha Centuri\n 3. Krypton ");
                     string choice = Console.ReadLine();
+                    Console.Clear();
+                    App.statmenu();
+                    Logos.travelinglogo();
                     travel.CurrentPlanet(choice);
 
                 }
-                else if (input == "quit")
+                else if (input == "0")
                 {
                     play = false;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("I'm sorry, I didn't understand your choice. Please try again, and remember that the options are case sensitive!");
+                    Console.WriteLine("I'm sorry, I didn't understand your choice. Please try again!");
                     Console.ResetColor();
                 }
 
+
             }
+        }
+
+        // ask for player name, race, and save it
+        static void chooseyourcharacter()
+        {
+            int name1 = 0;
+            Console.Write("What is your name:");
+            heroname = Console.ReadLine().ToUpper();
+            do
+            {
+
+                Console.WriteLine($"Are you sure you want your name to be {heroname}  Y/N ?");
+                var yesno = Console.ReadLine().ToUpper();
+                if (yesno == "Y")
+                {
+                    name1 = 1;
+                }
+                else if (yesno == "N")
+                {
+                    Console.Write("What is your name: ");
+                    heroname = Console.ReadLine().ToUpper();
+                    name1 = 0;
+                }
+            }
+            while (name1 == 0);
+            name1 = 0;
+
+        }
+        //stats menu
+        public static void statmenu()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($"=======================================================================================================================");
+            Console.WriteLine($"    Name: {heroname}                Ship: {shipname}                 Planet:                Age:             credits:");
+            Console.WriteLine($"=======================================================================================================================");
+            Console.ResetColor();
+        }
+
+        //introduction story line
+        public static void introductionscreen()
+        {
+            Console.Clear();
+            Logos.logo();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine ($"THE YEAR IS 1998 A.D, PLANET EARTH IS IN GREAT DANGER.\n");
+            Console.WriteLine ($"AFTER FUNDING MANY GREAT WARS AGAINST JUPITER, EARTH IS COMPLETELY BROKE. THE SPACE BANKERS ARE THREATENING\n");
+            Console.WriteLine ($"TO DESTROY EARTH IF THE LOAN OF 10,000 CREDITS IS NOT REPAID BY 2038 A.D. {heroname} YOUR MISSION IS TO TRAVEL THE\n");
+            Console.WriteLine ($"GALAXY AND MAKE ENOUGH MONEY TO REPAY THE SPACE BANK.  YOU  MUST BE QUICK... EVERY LIGHT YEAR TRAVELLED MEANS\n");
+            Console.WriteLine ($"ANOTHER YEAR PASSES.  YOU MUST TAKE 1,000 CREDITS AND GO TO DIFFERENT PLANETS BUYING AND SELLING GOODS UNTIL YOU HAVE \n");
+            Console.WriteLine ($"ENOUGH TO PAY THE BANKERS. TAKE YOUR SPACE SHIP {shipname} AND BEGIN YOUR JOURNEY!\n");
+            Console.ReadKey();
         }
     }
 }
