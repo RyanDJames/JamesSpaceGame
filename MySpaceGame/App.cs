@@ -226,7 +226,7 @@ namespace MySpaceGame
             Console.WriteLine($"ENOUGH TO PAY THE BANKERS. TAKE YOUR SPACE SHIP {shipname} AND BEGIN YOUR JOURNEY!\n");
             Console.ReadKey();
         }
-
+       
 
     }
 }
