@@ -167,11 +167,20 @@ namespace MySpaceGame
                     {
                         try
                         {
-                            travel.AgingToEarth(CurrentPlanet, Myship);
-                            travel.ChoosePlanet(choice);
-                            Logos.earthlogo();
-                            Console.ReadKey();
-                            CurrentPlanet = Earth;
+                            if (Myship.age >= 70)
+                            {
+                                travel.DeathsSweetEmbrace();
+                            }
+                            else
+                            {
+
+
+                                travel.AgingToEarth(CurrentPlanet, Myship);
+                                travel.ChoosePlanet(choice);
+                                Logos.earthlogo();
+                                Console.ReadKey();
+                                CurrentPlanet = Earth;
+                            }
                         }
                         catch (Exception)
                         {
@@ -182,13 +191,21 @@ namespace MySpaceGame
                     }
                     else if (choice == "KRYPTON")
                     {
+
                         try
-                        { 
-                            travel.AgingToKrypton(CurrentPlanet, Myship);
-                            travel.ChoosePlanet(choice);
-                            Logos.planetkryptonlgo();
-                            Console.ReadKey();
-                        CurrentPlanet = Krypton;
+                        {
+                            if (Myship.age >= 70)
+                            {
+                                travel.DeathsSweetEmbrace();
+                            }
+                            else
+                            {
+                                travel.AgingToKrypton(CurrentPlanet, Myship);
+                                travel.ChoosePlanet(choice);
+                                Logos.planetkryptonlgo();
+                                Console.ReadKey();
+                                CurrentPlanet = Krypton;
+                            }
                         }
                         catch (Exception)
                         {
@@ -201,13 +218,20 @@ namespace MySpaceGame
                     {
                         try
                         {
+                            if (Myship.age >= 70)
+                            {
+                                travel.DeathsSweetEmbrace();
+                            }
+                            else
+                            {
 
 
-                            travel.AgingToAlphaCenturi(CurrentPlanet, Myship);
-                            travel.ChoosePlanet(choice);
-                            Logos.aplhacentaurilogo();
-                            Console.ReadKey();
-                            CurrentPlanet = AlphaCenturi;
+                                travel.AgingToAlphaCenturi(CurrentPlanet, Myship);
+                                travel.ChoosePlanet(choice);
+                                Logos.aplhacentaurilogo();
+                                Console.ReadKey();
+                                CurrentPlanet = AlphaCenturi;
+                            }
                         }
                         catch (Exception)
                         {

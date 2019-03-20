@@ -57,7 +57,19 @@ namespace MySpaceGame
             
 
         }
+        public void DeathsSweetEmbrace()
+        {
+            bool mybool = true;
+            while (mybool)
+            {
+                Console.WriteLine("Sorry frendo, Your DEAD");
+                Console.ForegroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                Console.WriteLine("GAME OVER");
+                Console.ResetColor();
+                Console.ReadLine();
+            }
 
-        
+        }
     }
 }
