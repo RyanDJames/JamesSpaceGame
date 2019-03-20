@@ -39,9 +39,9 @@ namespace MySpaceGame
             Items Wood = new Items("Wood", 20, 50);
 
             //Create Planets
-            Planets Earth = new Planets("Earth");
-            Planets AlphaCenturi = new Planets("Alpha Centuri");
-            Planets Krypton = new Planets("Krypton");
+            Planets Earth = new Planets("Earth", 0d, 4.2d, 6);
+            Planets AlphaCenturi = new Planets("Alpha Centuri", 4.2d, 0d, 8d);
+            Planets Krypton = new Planets("Krypton", 8d, 8d, 0d);
             Planets CurrentPlanet = Earth;
             //Fill initial planet's markets
             Earth.inventory.Add(Water);
@@ -142,7 +142,7 @@ namespace MySpaceGame
                     string choice = Console.ReadLine().ToUpper();
                     if (choice == "EARTH")
                     {
-
+                        travel.AgingToEarth(CurrentPlanet, Myship);
                         travel.ChoosePlanet(choice);
                         Logos.earthlogo();
                         Console.ReadKey();
@@ -150,6 +150,7 @@ namespace MySpaceGame
                     }
                     else if (choice == "KRYPTON")
                     {
+                        travel.AgingToKrypton(CurrentPlanet, Myship);
                         travel.ChoosePlanet(choice);
                         Logos.planetkryptonlgo();
                         Console.ReadKey();
@@ -157,6 +158,7 @@ namespace MySpaceGame
                     }
                     else if (choice == "ALPHA CENTURI")
                     {
+                        travel.AgingToAlphaCenturi(CurrentPlanet, Myship);
                         travel.ChoosePlanet(choice);
                         Logos.aplhacentaurilogo();
                         Console.ReadKey();

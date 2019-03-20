@@ -11,13 +11,18 @@ namespace MySpaceGame
     {
         //variables
         public string name;
+        public double distanceFromEarth;
+        public double distanceFromAlphaCenturi;
+        public double distanceFromKrypton;
         public List<Items> inventory = new List<Items>();
         
         //constructors
-        public Planets(string _name)
+        public Planets(string _name, double _distanceFromEarth, double _distanceFromAlphaCenturi, double _distanceFromKrypton)
         {
             name = _name;
-
+            distanceFromEarth = _distanceFromEarth;
+            distanceFromAlphaCenturi = _distanceFromAlphaCenturi;
+            distanceFromKrypton = _distanceFromKrypton;
         }
 
 
@@ -30,6 +35,8 @@ namespace MySpaceGame
             Myship.currency -= inventory[index].value;
             
         }
+        
+
         public void printInv()
         {
             foreach (Items item in inventory)

@@ -9,9 +9,7 @@ namespace MySpaceGame
 {
     public class TravelTime
     {
-        private object choice;
-
-        //in this class, you're going to make some aesthe
+        
         public void travelAnimatics()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -32,6 +30,21 @@ namespace MySpaceGame
             Console.Read();
             
         }
+        // add to age not take away9322109813299381023183098391023838029
+        public void AgingToEarth(Planets _currentPlanet, Spaceship _myShip)
+        {
+            _myShip.age += Convert.ToInt32(_currentPlanet.distanceFromEarth);
+        }
+        public void AgingToKrypton(Planets _currentPlanet, Spaceship _myShip)
+        {
+            _myShip.age += Convert.ToInt32(_currentPlanet.distanceFromKrypton);
+        }
+        public void AgingToAlphaCenturi(Planets _currentPlanet, Spaceship _myShip)
+        {
+            _myShip.age += Convert.ToInt32(_currentPlanet.distanceFromAlphaCenturi);
+        }
+
+
         public void ChoosePlanet(string choice)
         {
 
@@ -41,15 +54,10 @@ namespace MySpaceGame
             Console.Clear();
             
             Console.WriteLine($"--------------------Welcome to {choice}--------------------");
-            //planets.currentplanets = choice
+            
 
         }
 
         
-        public void CurrentPlanet(string planet)
-        {
-           
-
-        }
     }
 }
