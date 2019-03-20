@@ -84,6 +84,7 @@ namespace MySpaceGame
                "\n1.  Would you like to travel?" +
                "\n2.  Would you like to trade?" +
                "\n0.  Would you like to quit?" +
+               "\n3.  Would You like to view your inventory" +
                "\n-> : ");
 
                 string input = Console.ReadLine();
@@ -165,7 +166,13 @@ namespace MySpaceGame
                         CurrentPlanet = AlphaCenturi;
                     }
                 }
+                else if (input == "3")
+                {
+                
+                    Myship.printInv();
+                    Console.ReadKey();
 
+                }
                 else if (input == "0")
                 {
                     play = false;
