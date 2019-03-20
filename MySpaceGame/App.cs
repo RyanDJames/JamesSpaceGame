@@ -100,13 +100,20 @@ namespace MySpaceGame
                         string answer = Console.ReadLine().ToUpper();
                         if (answer == "BUY")
                         {
-                            Thread.Sleep(1000);
-                            Earth.printInv();
-                            Console.WriteLine("Please select an item you would like to buy: ");
-                            int index = int.Parse(Console.ReadLine());
-                            Earth.BuyTransaction(index, Myship, CurrentPlanet);
-
-
+                            try
+                            {
+                                Thread.Sleep(1000);
+                                Earth.printInv();
+                                Console.WriteLine("Please select an item you would like to buy: ");
+                                int index = int.Parse(Console.ReadLine());
+                                Earth.BuyTransaction(index, Myship, CurrentPlanet);
+                            }
+                            catch (Exception)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("I'm sorry, that was an invalid response.");
+                                Console.ResetColor();
+                            }
                         }
 
                         //Ok so basically what I need to do now is make sure once an item is sold it removes it from the users "myship" inventory.
@@ -114,10 +121,21 @@ namespace MySpaceGame
                         //Maybe Add some error messages
                         else if (answer == "SELL")
                         {
-                            Myship.printInv();
-                            Console.WriteLine("Please select an item you would like to sell: ");
-                            int index = int.Parse(Console.ReadLine());
-                            CurrentPlanet.SellTransaction(index, Myship, CurrentPlanet);
+                            try
+                            {
+
+
+                                Myship.printInv();
+                                Console.WriteLine("Please select an item you would like to sell: ");
+                                int index = int.Parse(Console.ReadLine());
+                                CurrentPlanet.SellTransaction(index, Myship, CurrentPlanet);
+                            }
+                            catch (Exception)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("I'm sorry, that was an invalid response.");
+                                Console.ResetColor();
+                            }
                         }
                         else if (answer == "QUIT")
                         {
@@ -147,35 +165,72 @@ namespace MySpaceGame
                     string choice = Console.ReadLine().ToUpper();
                     if (choice == "EARTH")
                     {
-                        travel.AgingToEarth(CurrentPlanet, Myship);
-                        travel.ChoosePlanet(choice);
-                        Logos.earthlogo();
-                        Console.ReadKey();
-                        CurrentPlanet = Earth;
+                        try
+                        {
+                            travel.AgingToEarth(CurrentPlanet, Myship);
+                            travel.ChoosePlanet(choice);
+                            Logos.earthlogo();
+                            Console.ReadKey();
+                            CurrentPlanet = Earth;
+                        }
+                        catch (Exception)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("I'm sorry, that was an invalid response.");
+                            Console.ResetColor();
+                        }
                     }
                     else if (choice == "KRYPTON")
                     {
-                        travel.AgingToKrypton(CurrentPlanet, Myship);
-                        travel.ChoosePlanet(choice);
-                        Logos.planetkryptonlgo();
-                        Console.ReadKey();
+                        try
+                        { 
+                            travel.AgingToKrypton(CurrentPlanet, Myship);
+                            travel.ChoosePlanet(choice);
+                            Logos.planetkryptonlgo();
+                            Console.ReadKey();
                         CurrentPlanet = Krypton;
+                        }
+                        catch (Exception)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("I'm sorry, that was an invalid response.");
+                            Console.ResetColor();
+                        }
                     }
                     else if (choice == "ALPHA CENTURI")
                     {
-                        travel.AgingToAlphaCenturi(CurrentPlanet, Myship);
-                        travel.ChoosePlanet(choice);
-                        Logos.aplhacentaurilogo();
-                        Console.ReadKey();
-                        CurrentPlanet = AlphaCenturi;
+                        try
+                        {
+
+
+                            travel.AgingToAlphaCenturi(CurrentPlanet, Myship);
+                            travel.ChoosePlanet(choice);
+                            Logos.aplhacentaurilogo();
+                            Console.ReadKey();
+                            CurrentPlanet = AlphaCenturi;
+                        }
+                        catch (Exception)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("I'm sorry, that was an invalid response.");
+                            Console.ResetColor();
+                        }
                     }
                 }
                 else if (input == "3")
                 {
-                
-                    Myship.printInv();
-                    Console.ReadKey();
+                    try
+                    {
 
+                        Myship.printInv();
+                        Console.ReadKey();
+                    }
+                    catch (Exception)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("I'm sorry, that was an invalid response.");
+                        Console.ResetColor();
+                    }
                 }
                 else if (input == "0")
                 {
