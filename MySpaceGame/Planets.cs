@@ -36,6 +36,11 @@ namespace MySpaceGame
             
         }
         
+        public void SellTransaction(int index, Spaceship Myship, Planets _currentPlanet)
+        {
+            this.inventory.Add(Myship.inventory.ElementAt(index));
+            Myship.currency += inventory[index].value;
+        }
 
         public void printInv()
         {

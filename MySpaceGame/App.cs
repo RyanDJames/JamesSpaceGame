@@ -10,9 +10,6 @@ namespace MySpaceGame
 {
     class App
     {
-        static string currentplanet;
-        static string playercredits;
-        static string playerage;
         static string heroname;
         static string shipname;
         public void Run()
@@ -111,9 +108,16 @@ namespace MySpaceGame
 
 
                         }
+
+                        //Ok so basically what I need to do now is make sure once an item is sold it removes it from the users "myship" inventory.
+                        //I also need to put all of this into a try catch to handle the exceptions
+                        //Maybe Add some error messages
                         else if (answer == "SELL")
                         {
-
+                            Myship.printInv();
+                            Console.WriteLine("Please select an item you would like to sell: ");
+                            int index = int.Parse(Console.ReadLine());
+                            CurrentPlanet.SellTransaction(index, Myship, CurrentPlanet);
                         }
                         else if (answer == "QUIT")
                         {
