@@ -11,16 +11,19 @@ namespace MySpaceGame
         //class variables
         public string Name;
         public int speed;
+        public int age;
         public int currency;
         public List<Items> inventory = new List<Items>();
 
         //class constructors
-        public Spaceship(string _name, int _speed, int _currency)
+        public Spaceship(string _name, int _speed, int _age, int _currency)
         {
             Name = _name;
             speed = _speed;
+            age = _age;
             currency = _currency;
             
+
         }
 
 
@@ -47,5 +50,16 @@ namespace MySpaceGame
 
         }
 
+        public void statmenu(string _heroName, string _shipName, Planets _currentplanet)
+        {
+            string CurrentPlanet = _currentplanet.name;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($"=======================================================================================================================");
+            Console.WriteLine($"    Name: {_heroName}                Ship: {_shipName}              Planet:{CurrentPlanet}             Age:{age}          credits:{currency}");
+            Console.WriteLine($"=======================================================================================================================");
+            Console.ResetColor();
+
+        }
     }
 }

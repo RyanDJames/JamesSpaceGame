@@ -12,20 +12,19 @@ namespace MySpaceGame
         //variables
         public string name;
         public List<Items> inventory = new List<Items>();
-
-
+        
         //constructors
         public Planets(string _name)
         {
             name = _name;
+
         }
 
 
 
         //methods
-        public void BuyTransaction(int index, Spaceship Myship)
+        public void BuyTransaction(int index, Spaceship Myship, Planets _currentPlanet)
         {
-            
             
             Myship.inventory.Add(this.inventory.ElementAt(index));
             Myship.currency -= inventory[index].value;

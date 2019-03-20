@@ -39,7 +39,7 @@ namespace MySpaceGame
             Console.WriteLine($"Ok! {choice} it is!");
             travelAnimatics();
             Console.Clear();
-            App.statmenu();
+            
             Console.WriteLine($"--------------------Welcome to {choice}--------------------");
             //planets.currentplanets = choice
 

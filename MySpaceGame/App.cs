@@ -30,7 +30,7 @@ namespace MySpaceGame
             Console.Clear();
 
             //Create Spaceship:
-            Spaceship Myship = new Spaceship(shipname, 1, 1000);
+            Spaceship Myship = new Spaceship(shipname, 1, 20, 1000);
 
             //Create items
             Items Food = new Items("Food", 10, 1);
@@ -79,7 +79,7 @@ namespace MySpaceGame
             while (play)
             {
                 //choose what you want do 
-                statmenu();
+                Myship.statmenu(heroname, shipname, CurrentPlanet);
                 Console.Write("What would you like to do?" +
                "\n1.  Would you like to travel?" +
                "\n2.  Would you like to trade?" +
@@ -95,7 +95,7 @@ namespace MySpaceGame
                     {
 
                         Console.Clear();
-                        App.statmenu();
+                        Myship.statmenu(heroname, shipname, Earth);
                         Console.WriteLine("Welcome to the market!");
                         Logos.earthmarket();
                         Console.WriteLine("\nwould you like to buy, sell, or quit?: ");
@@ -106,7 +106,7 @@ namespace MySpaceGame
                             Earth.printInv();
                             Console.WriteLine("Please select an item you would like to buy: ");
                             int index = int.Parse(Console.ReadLine());
-                            Earth.BuyTransaction(index, Myship);
+                            Earth.BuyTransaction(index, Myship, CurrentPlanet);
 
 
                         }
@@ -126,7 +126,7 @@ namespace MySpaceGame
                             Console.ResetColor();
                         }
                         Console.Clear();
-                        statmenu();
+                        Myship.statmenu(heroname, shipname, CurrentPlanet);
                         Console.ReadKey();
 
                     }
@@ -136,7 +136,7 @@ namespace MySpaceGame
                 else if (input == "1")
                 {
                     Console.Clear();
-                    statmenu();
+                    Myship.statmenu(heroname, shipname, CurrentPlanet);
                     Console.WriteLine("Where would you like to go?" +
                     "\n Earth\n Alpha Centuri\n Krypton ");
                     string choice = Console.ReadLine().ToUpper();
@@ -203,15 +203,7 @@ namespace MySpaceGame
             }         
         }
         //stats menu
-        public static void statmenu()
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine($"=======================================================================================================================");
-            Console.WriteLine($"    Name: {heroname}                Ship: {shipname}              Planet:{currentplanet}             Age:{playerage}          credits:{playercredits}");
-            Console.WriteLine($"=======================================================================================================================");
-            Console.ResetColor();
-        }
+      
         //introduction story line
        public static  void introductionscreen()
         {
