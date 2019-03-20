@@ -71,7 +71,7 @@ namespace MySpaceGame
             Console.Clear();
 
 
-
+            
             bool play = true;
             while (play)
             {

@@ -25,7 +25,7 @@ namespace MySpaceGame
             Console.ResetColor();
             Thread.Sleep(600);
             Console.Clear();
-            Logos.travelinglogo1();
+            Logos.travelinglogo2();
             Console.WriteLine("Press ENTER to continue:");
             Console.Read();
             
