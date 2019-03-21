@@ -12,7 +12,7 @@ namespace MySpaceGame
         public string Name;
         public int speed;
         public int age;
-        public int currency;
+        public double currency;
         public List<Items> inventory = new List<Items>();
 
         //class constructors

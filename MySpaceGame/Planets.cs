@@ -32,10 +32,21 @@ namespace MySpaceGame
         //methods
         public void BuyTransaction(int index, Spaceship Myship, Planets _currentPlanet)
         {
-            
-            Myship.inventory.Add(this.inventory.ElementAt(index));
-            Myship.currency -= inventory[index].value;
-            
+            if (_currentPlanet.distanceFromEarth == 0)
+            {
+                Myship.inventory.Add(this.inventory.ElementAt(index));
+                Myship.currency -= inventory[index].value;
+            }
+            else if (_currentPlanet.distanceFromKrypton == 0)
+            {
+                Myship.inventory.Add(this.inventory.ElementAt(index));
+                Myship.currency -= inventory[index].value * .8;  
+            }
+            else if (_currentPlanet.distanceFromAlphaCenturi == 0)
+            {
+                Myship.inventory.Add(this.inventory.ElementAt(index));
+                Myship.currency -= inventory[index].value * .5;
+            }
         }
         
         public void SellTransaction(int index, Spaceship Myship, Planets _currentPlanet)

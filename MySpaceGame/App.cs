@@ -108,6 +108,7 @@ namespace MySpaceGame
                                 Console.WriteLine("Please select an item you would like to buy: ");
                                 int index = int.Parse(Console.ReadLine());
                                 Earth.BuyTransaction(index, Myship, CurrentPlanet);
+
                             }
                             catch (Exception)
                             {
@@ -268,6 +269,7 @@ namespace MySpaceGame
                     }
                     
                 }
+                //This one shows your ship's current inventory
                 else if (input == "3")
                 {
                     try
