@@ -245,6 +245,7 @@ namespace MySpaceGame
                         {
                             if (Myship.age >= 70)
                             {
+                                Myship.statmenu(heroname, shipname, CurrentPlanet);
                                 travel.DeathsSweetEmbrace();
                             }
                             else
