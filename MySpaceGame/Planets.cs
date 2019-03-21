@@ -42,6 +42,7 @@ namespace MySpaceGame
         {
             this.inventory.Add(Myship.inventory.ElementAt(index));
             Myship.currency += inventory[index].value;
+            Myship.inventory.RemoveAt(index);
         }
 
         public void printInv()
@@ -49,7 +50,7 @@ namespace MySpaceGame
             foreach (Items item in inventory)
             {
                 Console.WriteLine($"Index: {inventory.IndexOf(item)},\n Product: {item.name}," +
-                    $"\n Quantity {item.quantity}," +
+                    $"\n Quantity: {item.quantity}," +
                     $"\n Credits: {item.value}");
 
             }

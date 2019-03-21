@@ -40,7 +40,7 @@ namespace MySpaceGame
         {
             foreach (Items item in inventory)
             {
-                Console.WriteLine($"{inventory.IndexOf(item)}, {item.name}, {item.quantity}, {item.value}");
+                Console.WriteLine($" Index:{inventory.IndexOf(item)}, Name:{item.name}, Quantity:{item.quantity}, Value:{item.value}");
 
             }
         }

@@ -116,10 +116,7 @@ namespace MySpaceGame
                                 Console.ResetColor();
                             }
                         }
-
-                        //Ok so basically what I need to do now is make sure once an item is sold it removes it from the users "myship" inventory.
-                        //I also need to put all of this into a try catch to handle the exceptions
-                        //Maybe Add some error messages
+                        
                         else if (answer == "SELL")
                         {
                             try

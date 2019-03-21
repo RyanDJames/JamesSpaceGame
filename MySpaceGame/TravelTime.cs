@@ -30,7 +30,7 @@ namespace MySpaceGame
             Console.Read();
             
         }
-        // add to age not take away9322109813299381023183098391023838029
+        
         public void AgingToEarth(Planets _currentPlanet, Spaceship _myShip)
         {
             _myShip.age += Convert.ToInt32(_currentPlanet.distanceFromEarth);
