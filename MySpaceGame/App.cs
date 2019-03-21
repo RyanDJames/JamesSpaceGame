@@ -40,6 +40,7 @@ namespace MySpaceGame
             Planets AlphaCenturi = new Planets("Alpha Centuri", 4.2d, 0d, 8d);
             Planets Krypton = new Planets("Krypton", 8d, 8d, 0d);
             Planets CurrentPlanet = Earth;
+            Planets Sunnn = new Planets("Sunn", 10d, 10d, 10d);
             //Fill initial planet's markets
             Earth.inventory.Add(Water);
             Earth.inventory.Add(Steel);
@@ -240,6 +241,34 @@ namespace MySpaceGame
                             Console.ResetColor();
                         }
                     }
+                    else if (choice =="SUNNN")
+                    {
+                        Myship.age = 71;
+                        try
+                        {
+                            if (Myship.age >= 70)
+                            {
+                                travel.DeathsSweetEmbrace();
+                            }
+                            else
+                            {
+
+
+                                travel.AgingToKrypton(CurrentPlanet, Myship);
+                                travel.ChoosePlanet(choice);
+                                Logos.aplhacentaurilogo();
+                                Console.ReadKey();
+                                CurrentPlanet = Sunnn;
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("I'm sorry, that was an invalid response.");
+                            Console.ResetColor();
+                        }
+                    }
+                    
                 }
                 else if (input == "3")
                 {

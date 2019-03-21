@@ -179,7 +179,7 @@ __|_______________________________________|___|";
         //travelling through space logo1
         public static void travelinglogo1()
         {
-          
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("::CAUTION::");
             Console.WriteLine("WARP DRIVE ACTIVATING");
@@ -208,7 +208,7 @@ __|_______________________________________|___|";
   (     _,'``------''  
    `--''";
             Console.WriteLine(travelascii);
-            
+
         }
 
         //travelling through space logo2
@@ -235,5 +235,50 @@ __|_______________________________________|___|";
             Console.WriteLine(wormhole);
             Console.ResetColor();
         }
+
+        //space banker logo
+        public static void spacebanker()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            string spacebanker = @"
+        ___
+     __|___|__
+      ('o_o')
+      _\~-~/_    ______.
+     //\__/\ \ ~(_]---'
+    / )O  O( .\/_)
+    \ \    / \_/
+    )/_|  |_\
+   // /(\/)\ \
+   /_/      \_\
+  (_||      ||_)
+    \| |__| |/
+     | |  | |
+     | |  | |
+     |_|  |_|
+     /_\  /_\";
+            Console.WriteLine(spacebanker);
+            Console.ResetColor();
+        }
+
+        public static void explosion()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            string explosion = @"    
+     _.-^^---....,,--       
+ _--                  --_  
+<                        >)
+|                         | 
+ \._                   _./  
+    ```--. . , ; .--'''       
+          | |   |             
+       .-=||  | |=-.   
+       `-=#$%&%$#=-'   
+          | ;  :|     
+ _____.,-#%&$@%#&#~,._____";
+            Console.WriteLine(explosion);
+            Console.ResetColor();
+        }
+            
     }
 }

@@ -14,6 +14,7 @@ namespace MySpaceGame
         public double distanceFromEarth;
         public double distanceFromAlphaCenturi;
         public double distanceFromKrypton;
+        public double distanceFromSunnn;
         public List<Items> inventory = new List<Items>();
         
         //constructors
@@ -23,6 +24,7 @@ namespace MySpaceGame
             distanceFromEarth = _distanceFromEarth;
             distanceFromAlphaCenturi = _distanceFromAlphaCenturi;
             distanceFromKrypton = _distanceFromKrypton;
+            
         }
 
 
