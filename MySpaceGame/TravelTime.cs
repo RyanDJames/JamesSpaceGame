@@ -9,7 +9,13 @@ namespace MySpaceGame
 {
     public class TravelTime
     {
-        
+
+
+
+
+
+
+        //Class Methods
         public void travelAnimatics()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -48,8 +54,7 @@ namespace MySpaceGame
             _myShip.age += Convert.ToInt32(_currentPlanet.distanceFromSunnn);
         }
 
-
-
+        
         public void ChoosePlanet(string choice)
         {
 

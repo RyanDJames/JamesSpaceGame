@@ -26,10 +26,7 @@ namespace MySpaceGame
 
         }
 
-
-
         //class methods
-
         public void addToInv(Items item)
         {
             inventory.Add(item);
@@ -44,12 +41,7 @@ namespace MySpaceGame
 
             }
         }
-
-        public void transactionWithPlanet(int value)
-        {
-
-        }
-
+        
         public void statmenu(string _heroName, string _shipName, Planets _currentplanet)
         {
             string CurrentPlanet = _currentplanet.name;

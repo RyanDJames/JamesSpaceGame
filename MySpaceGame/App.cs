@@ -59,6 +59,8 @@ namespace MySpaceGame
             TravelTime travel = new TravelTime();
             TravelTime ChoosePlanet = new TravelTime();
             App App = new App();
+
+
             //introductory dialogue. 
             //initial user input.
             Logos.logo();
